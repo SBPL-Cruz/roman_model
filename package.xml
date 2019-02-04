@@ -10,4 +10,5 @@
 
     <exec_depend>xacro</exec_depend>
     <exec_depend>hector_sensors_description</exec_depend>
+    <exec_depend>robotiq_s_model_visualization</exec_depend>
 </package>

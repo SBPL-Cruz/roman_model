@@ -3,6 +3,7 @@
     <xacro:include filename="$(find roman_model)/gazebo/roman_body.gazebo.xacro"/>
     <xacro:include filename="$(find roman_model)/control/roman_body.transmission.xacro"/>
     <xacro:include filename="$(find hector_sensors_description)/urdf/asus_camera.urdf.xacro"/>
+    <xacro:include filename="$(find realsense2_camera)/urdf/_d435.urdf.xacro"/>
 
     <xacro:macro name="roman_body" params="name parent *origin namespace">
         <joint name="torso_joint0" type="fixed">
@@ -92,9 +93,13 @@
             </collision>
         </link>
 
-        <xacro:asus_camera name="asus" parent="chest">
+        <!-- <xacro:asus_camera name="asus" parent="chest">
             <origin xyz="0.05 -0.075 0" rpy="${-M_PI/2} 0.0 -2.09"/>
-        </xacro:asus_camera>
+        </xacro:asus_camera> -->
+        <xacro:sensor_d435  parent="chest">
+            <origin xyz="0.05 -0.075 0" rpy="${-M_PI/2} 0.0 -2.09"/>
+        </xacro:sensor_d435>
+
 
         <xacro:roman_body_gazebo name="${name}" namespace="${namespace}"/>
         <xacro:roman_body_transmission name="${name}" namespace="${namespace}"/>

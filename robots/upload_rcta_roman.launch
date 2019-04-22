@@ -1,6 +1,6 @@
 <launch>
     <arg name="ns" default="false"/>
-    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find roman_model)/robots/realsense_camera.rviz" required="true" />
+    <!-- <node name="rviz" pkg="rviz" type="rviz" args="-d $(find roman_model)/robots/realsense_camera.rviz" required="true" /> -->
 
     <param if="$(arg ns)" name="robot_description" command="$(find xacro)/xacro.py --inorder '$(find roman_model)/robots/rcta_roman.urdf.xacro' namespace:=true"/>
     <param unless="$(arg ns)" name="robot_description" command="$(find xacro)/xacro.py --inorder '$(find roman_model)/robots/rcta_roman.urdf.xacro' namespace:=false"/>

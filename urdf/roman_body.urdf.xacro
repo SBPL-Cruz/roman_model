@@ -97,7 +97,10 @@
             <origin xyz="0.05 -0.075 0" rpy="${-M_PI/2} 0.0 -2.09"/>
         </xacro:asus_camera> -->
         <xacro:sensor_d435  parent="chest">
-            <origin xyz="0.05 -0.075 0" rpy="${-M_PI/2} 0.0 -2.09"/>
+            <!-- For box and drill dataset -->
+            <!-- <origin xyz="0.05 -0.075 0" rpy="${-M_PI/2} 0.0 -2.30"/> -->
+            <!-- For box and wood dataset -->
+            <origin xyz="0.05 -0.075 0" rpy="${-M_PI/2} 0.0 -2.31"/>
         </xacro:sensor_d435>
 
 
